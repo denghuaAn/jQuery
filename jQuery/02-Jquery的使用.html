@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width:200px;
+            height:200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" class="btn" value="显示隐藏">
+<div id="box">
+</div>
+
+<script src="jquery-1.11.1.js"></script>
+<script>
+    /*$(function(){  //标签加载完后 在执行
+        alert(21313)
+    })*/
+
+    $(document).ready(function(){  //文档加载完后 在执行
+        $(".btn").click(function(){
+            $("#box").slideToggle(200);
+        })
+
+        var $我的 ="132131"
+        alert($我的);
+    });
+
+</script>
+
+</body>
+</html>

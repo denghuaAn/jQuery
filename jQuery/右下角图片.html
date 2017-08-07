@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		 <style>
+        .box{
+            position: fixed;
+            width:412px;
+            height: 195px;
+            right: 0px;
+            bottom:0px;
+            display: none;
+        }
+        .box img:nth-child(2){
+            position: absolute;
+            right: 40px;
+            top: 0px;
+            cursor: pointer;
+        }
+        .text{
+            width: 100px;
+            height: 300px;
+            display: none;
+            background-color: palegoldenrod;
+        }
+    </style>
+	</head>
+	<body style="height: 2000px;">
+
+    <div class="box">
+        <img src="../img/04.jpg">
+        <img src="../img/05.jpg">
+    </div>
+
+<button>下拉</button>
+<button>上啦</button>
+<div class="text"></div>
+	</body>
+	
+<script src="jquery-1.11.1.js"></script>
+
+<script>
+    /*$("button:eq(0)").click(function(){
+        $(".text").slideToggle(600);
+    });*/
+
+    var $box=$(".box");
+
+/*    setTimeout(function(){
+        $box.animate({
+            bottom:"0px"
+        },1500)
+    },3000);*/
+
+    $box.slideDown(1000)           
+            .slideUp(1000)
+            .fadeIn(1000)         
+            .animate({
+            	right:"800px",
+            	top:"0px"
+            },1000)
+             .fadeOut(2000)
+
+
+    /*$(".box img:nth-child(2)").click(function(){
+        $box.fadeOut(500);
+    });*/
+
+</script>
+</html>

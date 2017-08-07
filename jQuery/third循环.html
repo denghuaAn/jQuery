@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				list-style: none;
+			}
+		</style>
+	</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ol>
+
+        </ol>
+    </div>
+	<script type="text/javascript" src="jquery-1.11.1.js">
+		
+	</script>
+	<script type="text/javascript">
+		 $(".box li").each(function(i){         //传参
+		 	$("ol").append("<li>"+i+"</li>");
+		 })
+	</script>
+</html>

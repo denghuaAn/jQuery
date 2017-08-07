@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background: deepskyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" class="btn" value="按钮1" />
+		<input type="button"  class="btn" value="按钮2" />
+		<div class="box"></div>
+	</body>
+	<script type="text/javascript" src="ajax.js">
+		
+	</script>
+	
+	<script type="text/javascript">
+		var btn=document.getElementsByClassName("btn");
+		var box=document.getElementsByClassName("box")[0];
+		var arr=["btn1.txt","btn2.txt"];
+		          for(var i=0;i<btn.length;i++){
+		          	btn[i].index=i;
+		          	btn[i].onclick=function(){
+		          		ajax(arr[this.index],function(str){
+		          			box.innerHTML=str;
+		          		})
+		          	}
+		          }
+		
+  	</script>
+</html>

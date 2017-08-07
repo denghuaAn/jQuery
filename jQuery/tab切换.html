@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		 <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            width: 500px;
+            height:500px;
+            margin: 50px auto;
+        }
+
+        .box .mei{
+            width: 100%;
+            height:50px;
+            list-style: none;
+            background-color: #cccccc;
+            border: 1px solid #cccccc;
+            border-bottom: none;
+        }
+        .box .mei li{
+            float: left;
+            width: 100px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+        .box .mei li.cur{
+            background-color: #fff;
+        }
+        .box .content{
+            width: 100%;
+            border: 1px solid #cccccc;
+            border-top: none;
+        }
+        .box .content > div{
+            display: none;
+            padding: 20px 10px;
+        }
+    </style>
+	</head>
+	<body>
+<div class="box">
+    <ul class="mei">
+        <li class="cur">首页</li>
+        <li>首页</li>
+        <li>首页</li>
+        <li>首页</li>
+    </ul>
+
+    <div class="content">
+        <div style="display: block">我是第一个开外挂我看过凉快圣诞节ds我是第一个开外挂我看过凉快圣诞节ds我是第一个开外挂我看过凉快圣诞节ds我是第一个开外挂我看过凉快圣诞节ds</div>
+        <div>22222222222</div>
+        <div>3333333333333</div>
+        <div>看到单身快乐积分束带结发圣诞节饭店上岛咖啡时间看到单身快乐积分束带结发圣诞节饭店上岛咖啡时间看到单身快乐积分束带结发圣诞节饭店上岛咖啡时间看到单身快乐积分束带结发圣诞节饭店上岛咖啡时间看到单身快乐积分束带结发圣诞节饭店上岛咖啡时间</div>
+    </div>
+</div>
+	</body>
+	<script type="text/javascript" src="jquery-1.11.1.js">
+		
+	</script>
+	<script type="text/javascript">
+		$(".box .mei li").click(function(){
+			$(this).addClass("cur").siblings().removeClass("cur"); //当前添加属性，其他兄弟去掉属性
+			//核心代码   ，都是以函数的方式
+			var index=$(this).index();     //存index值的方式
+			//console.log(index)
+			$(".content>div").hide();
+			$(".content>div").eq(index).show();
+		})
+	</script>
+</html>

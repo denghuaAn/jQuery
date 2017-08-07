@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="按钮1" />
+		<input type="button"  id="btn2" value="按钮2" />
+		<div class="box"></div>
+	</body>
+	<script type="text/javascript" src="ajax.js">
+		
+	</script>
+	
+	<script type="text/javascript">
+		var btn1=document.getElementById("btn1");
+		var btn2=document.getElementById("btn2");
+		
+		
+		 btn1.onclick=function(){
+		 	ajax("btn1.txt",function(str){       //文件对就 返回成功函数
+		 		alert(str);                  //显示city.json 文件里的内容              
+		 	},function(){                         //文件不对  返回失败函数
+		 		alert("失败");
+		 	})
+		 }
+	</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<button>append</button>          <!-- 在子类后面加-->
+    <button>appendTo</button>
+    <button>prepend</button>              <!-- 在子类前面加-->
+    <button>prependTo</button>
+    <button>after</button>
+    <button>before</button>
+    <button>insertBefore</button>
+    <button>insertAfter</button>
+    <button>remove</button>
+    <button>empty</button>
+    <button>html</button>
+    
+    <h1>我是h1</h1>
+    <div class="box"></div>
+    
+	</body>
+	<script type="text/javascript" src="jquery-1.11.1.js">
+		
+	</script>
+	
+	<script type="text/javascript">
+		$("button").eq(0).on("click",function(){
+			$(".box").append("<p>我是append创建的</p>");    //在子类后面加
+		});
+		
+		$("button").eq(1).on("click",function(){
+			$("<p>我是appendTo创建的</p>").appendTo(".box");   
+		});
+		
+		$("button").eq(2).on("click",function(){
+			$(".box").prepend("<p>我是prepend创建的</p>");   //在子类前面加
+		});
+					
+		$("button").eq(3).on("click",function(){
+			$("<p>我是prependTo创建的</p>").prependTo(".box");   
+		});
+		
+		$("button").eq(4).on("click",function(){
+			$(".box").after("<p>我是after创建的</p>");    //在后面加
+		});
+		
+		$("button").eq(5).on("click",function(){
+			$(".box").before("<p>我是before创建的</p>");    //在前面加
+		});
+	</script>
+</html>

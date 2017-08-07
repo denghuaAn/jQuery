@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .text{
+            width:100px;
+            height:100px;
+            background-color: red;
+            display: none;
+            position: absolute;
+            left: 0px;
+        }
+        .abc {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-top: 150px;
+        }
+    </style>
+
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").eq(0).click(function(){
+                $(".text").show(200);
+            });
+
+            $("button").eq(1).click(function(){
+                $(".text").hide(200);
+            });
+
+            $("button").eq(2).click(function(){
+                $(".text").slideDown(200)
+            });
+            $("button").eq(3).click(function(){
+                $(".text").slideUp(200)
+            });
+
+            $("button").eq(4).click(function(){
+                $(".text").slideToggle(200)
+            });
+            $("button").eq(5).click(function(){
+                $(".text").fadeIn(600)
+            });
+            $("button").eq(6).click(function(){
+                $(".text").fadeOut(600)
+            });
+            $("button").eq(7).click(function(){
+                $(".text").fadeToggle(600)
+            });
+            $("button").eq(8).click(function(){
+                $(".text").animate({
+                    width:"300px",
+                    height:"200px",
+                    left:"500px"
+                },2000,function(){
+                    $(".abc").animate({
+                        width:'200px',
+                        "background-color":"red"
+                    },2000,function(){
+
+                    })
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+<button>show</button>
+<button>hide</button>
+<button>slideDown</button>
+<button>slideUp</button>
+<button>slidetoggle</button>
+<button>fadeIn</button>
+<button>fadeOut</button>
+<button>fadeToggle</button>
+<button>animate</button>
+
+    <div class="text"></div>
+    <div class="abc"></div>
+</body>
+</html>

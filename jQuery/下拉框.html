@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+			}
+			.box{
+				width: 500px;
+				margin: 50px auto;
+				position: relative;
+			}
+			.nav{
+				width: 500px;
+				height: 40px;
+				background: deepskyblue;
+			}
+			
+	        .list li{
+				float: left;
+				width: 100px;
+				text-align: center;
+				line-height: 40px;	
+			}
+			
+			.nav_up li{
+				display: none;
+			}
+			
+			.nav .list li.cur{
+				background: palegreen;
+			}
+			#boss{
+				  width: 200px;
+                  height: 200px;
+                  background-color: red;
+                  position: absolute;
+                  left: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="nav">
+				<ul class="list">
+					<li class="cur">首页
+					              <ul class="nav_up">
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                  </ul>
+					</li>
+	                <li >首页
+					              <ul class="nav_up">
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                  </ul>
+					</li>
+					<li >首页
+					              <ul class="nav_up">
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                  </ul>
+					</li>
+					<li >首页
+					              <ul class="nav_up">
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                  </ul>
+					</li>
+					<li >首页
+					              <ul class="nav_up">
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                       <li>首页</li>
+                                  </ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button>启动</button>
+		<button>快速完成</button>
+		<button>暂停</button>
+		<div id="boss">
+		
+		</div>
+	</body>
+	<script type="text/javascript" src="node_modules\jquery\dist\jquery.js">
+		
+	</script>
+	<script type="text/javascript">
+             $(".nav_up").parent().hover(function(){
+             	$(this).find(".nav_up li").stop().slideToggle(200);
+             });
+           
+             $("button").eq(0).click(function(){
+             	$("#boss").animate({
+             		width:"300px",
+             		height:"300px",
+             		left:"500px"
+             	},1000)
+             });
+          
+             $("button").eq(1).click(function(){
+             	$("#boss").stop(true,true);        //动画快速完成
+             })
+          
+            $("button").eq(2).click(function(){
+             	$("#boss").stop(false,false);        //停止
+             })
+	</script>
+	
+</html>

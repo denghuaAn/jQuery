@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>append</button>
+<button>appendTo</button>
+<button>prepend</button>
+<button>prependTo</button>
+<button>after</button>
+<button>before</button>
+<button>insertBefore</button>
+<button>insertAfter</button>
+<button>remove</button>
+<button>empty</button>
+<button>html</button>
+
+<h1>我是H1</h1>
+<div class="box">
+
+</div>
+
+
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $("button").eq(0).on("click",function () {
+        $(".box").append("<p>我是append创建的</p>")
+    });
+    $("button").eq(1).on("mouseover",function () {
+        $("<p>我是appendTo创建的</p>").appendTo($(".box"));
+    });
+
+    $("button").eq(2).on("click",function () {
+        $(".box").prepend("<p>我是prepend创建的</p>");
+    });
+    $("button").eq(3).on("click",function () {
+        $("<p>我是prepend创建的</p>").prependTo($(".box"));
+    });
+    $("button").eq(4).on("click",function () {
+        $(".box").after("<p>after</p>")
+    });
+    $("button").eq(5).on("click",function () {
+        $(".box").before("<p>before</p>")
+    });
+
+    $("button").eq(6).on("click",function () {
+        $("<p>insertBefore</p>").insertBefore($(".box"))
+    });
+
+    $("button").eq(7).on("click",function () {
+        $("<p>insertAfter</p>").insertAfter($(".box"))
+    });
+
+    $("button").eq(8).on("click",function () {
+        $(".box").remove();
+    });
+  
+    $("button").eq(9).on("click",function () {
+        $(".box").empty();
+    });
+    $("button").eq(10).on("click",function () {
+        $(".box").html("<p>123131313</p>");
+    });
+
+</script>
+</body>
+</html>

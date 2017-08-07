@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button>设置属性</button>
+    <button>获取属性</button>
+    <button>移除属性</button>
+    <div class="box">
+        我是div
+        <p>我是P标签</p>
+    </div>
+<input type="text" value="12321">
+</body>
+</html>
+
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(".button").remove()
+    $("button").eq(0).click(function(){
+        $(".box").attr("date-title","我是动态设置的");
+        $("input[type='text']").val(66666666666)
+    });
+    $("button").eq(1).click(function(){
+        console.log($(".box").attr("date-title"))
+    });
+    $("button").eq(2).click(function(){
+        $(".box").removeAttr("date-title");
+    });
+
+    console.log($(".box").html())
+    console.log($(".box").text())
+
+</script>

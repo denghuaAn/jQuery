@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+			}
+			
+			.box{
+				width: 790px;
+				height: 340px;
+				margin: 50px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.box .oul{
+				position: relative;
+				z-index: 1;
+				left: 0px;
+			}
+			.box .oul li{
+	            position: absolute;
+	            width: 790px;
+			}
+			
+			.box ol{
+				position: absolute;
+				bottom: 10px;
+				padding: 5px 10px;
+				left: 600px;
+				z-index: 4;   /*  一直在ul之上*/
+			}
+			.box ol li{
+				width: 25px;
+				height: 25px;
+				background: gainsboro;
+				text-align: center;
+			    line-height: 25px;
+				float: left;
+			}
+			
+			.box ol li+li{
+				margin-left: 5px;
+			}
+			
+			.box ol li.cur{
+				background: deepskyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+				<ul class="oul">
+					<li><img src="../img/01.jpg"/></li>
+					<li><img src="../img/02.jpg"/></li>
+					<li><img src="../img/03.jpg"/></li>
+					<li><img src="../img/05.png"/></li>
+					<li><img src="../img/02.jpg"/></li>
+				</ul>
+				<!--<ol>
+					<li class="cur">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ol>-->
+		</div>
+	</body>
+	<script type="text/javascript" src="jquery-1.11.1.js">
+		
+	</script>
+	<script type="text/javascript">
+	
+		  //动态创建按钮
+		  var oul=$(".box ul"), oli=$(".box .oul li");
+		         oul.after('<ol></ol>');        //节点外添加节点
+		         
+		         var ol=$(".box ol"), z=1;
+		         
+		         oli.each(function(i){
+		         	ol.append("<li>"+(i+1)+"</li>");    //ol 内部加li
+		         });
+		         
+		         $(".box ul li").eq(0).css('zIndex',z);  //把第一张放在上面
+		         		         
+		         $(".box ol li").eq(0).addClass("cur"); //第一点上色 
+		         $(".box ol li").mouseenter(function(){
+		         	$(this).addClass("cur").siblings().removeClass("cur");
+		         	
+		         	var index=$(this).index(); //或缺index  关键
+		         	//console.log(index)
+		         	
+		         	$(".box ul li").eq(index).css({
+		         		left:690+"px",
+		         		zIndex:z++         //让划过的图片在上面显示
+		         	}).animate({
+		         		left:0+"px"
+		         	},500);
+		         })
+		         
+		     
+	
+		  
+	</script>
+</html>
